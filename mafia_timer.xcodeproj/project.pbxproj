@@ -12,15 +12,19 @@
 		0947CDD32AF2BE8300EF225E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0947CDD22AF2BE8300EF225E /* Assets.xcassets */; };
 		0947CDD62AF2BE8300EF225E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0947CDD52AF2BE8300EF225E /* Preview Assets.xcassets */; };
 		0947CDDE2AF2CADF00EF225E /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947CDDD2AF2CADF00EF225E /* CircularProgressView.swift */; };
+		0947CDF72AF3A4BF00EF225E /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0947CDF52AF3A4BF00EF225E /* start.mp3 */; };
+		0947CDF82AF3A4BF00EF225E /* ten.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0947CDF62AF3A4BF00EF225E /* ten.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0947CDCB2AF2BE8200EF225E /* mafia timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mafia timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0947CDCB2AF2BE8200EF225E /* mafia_timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mafia_timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0947CDCE2AF2BE8200EF225E /* mafia_timerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mafia_timerApp.swift; sourceTree = "<group>"; };
 		0947CDD02AF2BE8200EF225E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0947CDD22AF2BE8300EF225E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0947CDD52AF2BE8300EF225E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0947CDDD2AF2CADF00EF225E /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		0947CDF52AF3A4BF00EF225E /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = start.mp3; path = ../../../Downloads/start.mp3; sourceTree = "<group>"; };
+		0947CDF62AF3A4BF00EF225E /* ten.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ten.mp3; path = ../../../Downloads/ten.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +41,9 @@
 		0947CDC22AF2BE8200EF225E = {
 			isa = PBXGroup;
 			children = (
-				0947CDCD2AF2BE8200EF225E /* mafia timer */,
+				0947CDF52AF3A4BF00EF225E /* start.mp3 */,
+				0947CDF62AF3A4BF00EF225E /* ten.mp3 */,
+				0947CDCD2AF2BE8200EF225E /* mafia_timer */,
 				0947CDCC2AF2BE8200EF225E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,12 +51,12 @@
 		0947CDCC2AF2BE8200EF225E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0947CDCB2AF2BE8200EF225E /* mafia timer.app */,
+				0947CDCB2AF2BE8200EF225E /* mafia_timer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0947CDCD2AF2BE8200EF225E /* mafia timer */ = {
+		0947CDCD2AF2BE8200EF225E /* mafia_timer */ = {
 			isa = PBXGroup;
 			children = (
 				0947CDCE2AF2BE8200EF225E /* mafia_timerApp.swift */,
@@ -59,7 +65,7 @@
 				0947CDD42AF2BE8300EF225E /* Preview Content */,
 				0947CDDD2AF2CADF00EF225E /* CircularProgressView.swift */,
 			);
-			path = "mafia timer";
+			path = mafia_timer;
 			sourceTree = "<group>";
 		};
 		0947CDD42AF2BE8300EF225E /* Preview Content */ = {
@@ -73,9 +79,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0947CDCA2AF2BE8200EF225E /* mafia timer */ = {
+		0947CDCA2AF2BE8200EF225E /* mafia_timer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0947CDD92AF2BE8300EF225E /* Build configuration list for PBXNativeTarget "mafia timer" */;
+			buildConfigurationList = 0947CDD92AF2BE8300EF225E /* Build configuration list for PBXNativeTarget "mafia_timer" */;
 			buildPhases = (
 				0947CDC72AF2BE8200EF225E /* Sources */,
 				0947CDC82AF2BE8200EF225E /* Frameworks */,
@@ -85,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = "mafia timer";
+			name = mafia_timer;
 			productName = "mafia timer";
-			productReference = 0947CDCB2AF2BE8200EF225E /* mafia timer.app */;
+			productReference = 0947CDCB2AF2BE8200EF225E /* mafia_timer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0947CDC62AF2BE8200EF225E /* Build configuration list for PBXProject "mafia timer" */;
+			buildConfigurationList = 0947CDC62AF2BE8200EF225E /* Build configuration list for PBXProject "mafia_timer" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0947CDCA2AF2BE8200EF225E /* mafia timer */,
+				0947CDCA2AF2BE8200EF225E /* mafia_timer */,
 			);
 		};
 /* End PBXProject section */
@@ -128,7 +134,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0947CDF82AF3A4BF00EF225E /* ten.mp3 in Resources */,
 				0947CDD62AF2BE8300EF225E /* Preview Assets.xcassets in Resources */,
+				0947CDF72AF3A4BF00EF225E /* start.mp3 in Resources */,
 				0947CDD32AF2BE8300EF225E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,65 +279,77 @@
 		0947CDDA2AF2BE8300EF225E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon White";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"mafia timer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "mafia_timer/Preview\\ Content";
 				DEVELOPMENT_TEAM = 42F2XJ8ZA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mafia Timer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.eapps.mafia-timer";
+				PRODUCT_BUNDLE_IDENTIFIER = me.eapps.mafia.timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0947CDDB2AF2BE8300EF225E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon White";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"mafia timer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "mafia_timer/Preview\\ Content";
 				DEVELOPMENT_TEAM = 42F2XJ8ZA9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mafia Timer";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.eapps.mafia-timer";
+				PRODUCT_BUNDLE_IDENTIFIER = me.eapps.mafia.timer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0947CDC62AF2BE8200EF225E /* Build configuration list for PBXProject "mafia timer" */ = {
+		0947CDC62AF2BE8200EF225E /* Build configuration list for PBXProject "mafia_timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0947CDD72AF2BE8300EF225E /* Debug */,
@@ -338,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0947CDD92AF2BE8300EF225E /* Build configuration list for PBXNativeTarget "mafia timer" */ = {
+		0947CDD92AF2BE8300EF225E /* Build configuration list for PBXNativeTarget "mafia_timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0947CDDA2AF2BE8300EF225E /* Debug */,
