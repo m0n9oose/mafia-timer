@@ -30,16 +30,8 @@ struct ContentView: View {
                 Spacer()
 
                 Group {
-                    Image("logo-n")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                        .scaledToFit()
-                    
-                    Text("Mafia")
-                        .font(.system(size: fontSize))
-                        .foregroundColor(.white)
-                        .padding(.bottom, 30)
-                    
+                    LogoView()
+
                     ZStack {
                         if spent > 0 {
                             Text("\(timeRemaining)")
