@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct CircularProgressView: View {
-    let total: Int
-    let spent: Int
+    let total: Double
+    let spent: Double
     let lineWidth: Int
     
     var progress: Double {
-        Double((1.0 / Double(total)) * Double(spent))
+        (1.0 / total) * spent
     }
     
     var body: some View {
@@ -40,5 +40,5 @@ struct CircularProgressView: View {
 }
 
 #Preview {
-    CircularProgressView(total: 30, spent: 25, lineWidth: 20)
+    CircularProgressView(total: 30.0, spent: 25.0, lineWidth: 20)
 }

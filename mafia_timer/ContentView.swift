@@ -12,17 +12,18 @@ import Combine
 var player : AVAudioPlayer?
 
 struct ContentView: View {
-    @State private var spent: Int = 0
-    @State private var running = false
-    @State private var mode = 60 // 30
+    @State private var spent: Double = 0.0
+    @State private var running: Bool = false
+    @State private var mode: Double = 60.0
     @State private var timer: Timer? = nil
     @State private var showingCreditsSheet = false
 
     let buttonWidth = CGFloat(80)
     let fontSize = CGFloat(32)
 
-    var timeRemaining : Int {
-        mode - spent
+    var timeRemaining: Double {
+        let multiplier = pow(10, Double(1))
+        return Darwin.round((mode - spent) * multiplier) / multiplier
     }
 
     var body: some View {
@@ -47,13 +48,13 @@ struct ContentView: View {
 
                     ZStack {
                         if spent > 0 {
-                            Text("\(timeRemaining)")
+                            Text("\(Int(timeRemaining))")
                                 .font(.system(size: 72, design: .rounded))
                                 .foregroundColor(.white)
                             
                             CircularProgressView(
                                 total: mode,
-                                spent: mode - timeRemaining,
+                                spent: spent,
                                 lineWidth: 15
                             )
                             .frame(width: 200, height: 200)
@@ -63,9 +64,9 @@ struct ContentView: View {
                 }
 
                 HStack(spacing: 30) {
-                    if spent == 0 {
+                    if spent.isZero {
                         Button {
-                            restartTimer(duration: 60)
+                            restartTimer(duration: 60.0)
                             playSound(resource: "start")
                         } label: {
                             Text("60")
@@ -76,7 +77,7 @@ struct ContentView: View {
                         .controlSize(.large)
 
                         Button {
-                            restartTimer(duration: 30)
+                            restartTimer(duration: 30.0)
                             playSound(resource: "start")
                         } label: {
                             Text("30")
@@ -87,7 +88,7 @@ struct ContentView: View {
                         .controlSize(.large)
                     } else {
                         Button {
-                            spent = 0
+                            spent = 0.0
                             stopTimer()
                         } label: {
                             Image(systemName: "arrow.counterclockwise")
@@ -132,9 +133,9 @@ struct ContentView: View {
         }
     }
     
-    func restartTimer(duration: Int) -> Void {
+    func restartTimer(duration: Double) -> Void {
         mode = duration
-        spent = 0
+        spent = 0.0
         startTimer()
     }
     
@@ -148,13 +149,14 @@ struct ContentView: View {
     
     func startTimer() -> Void {
         running = true
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            spent += 1
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { runningTimer in
+            spent += runningTimer.timeInterval
 
-            if timeRemaining == 10 {
+            print(timeRemaining)
+            if timeRemaining == 10.0 {
                 playSound(resource: "ten")
-            } else if timeRemaining == 0 {
-                spent = 0
+            } else if timeRemaining.isZero {
+                spent = 0.0
                 stopTimer()
             }
         }
