@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var running = false
     @State private var mode = 60 // 30
     @State private var timer: Timer? = nil
+    @State private var showingCreditsSheet = false
 
     let buttonWidth = CGFloat(80)
     let fontSize = CGFloat(32)
@@ -30,6 +31,18 @@ struct ContentView: View {
                 Spacer()
 
                 Group {
+                    HStack {
+                        Spacer()
+
+                        Button {
+                            showingCreditsSheet.toggle()
+                        } label: {
+                            Image(systemName: "info.circle")
+                                .font(.system(size: 20))
+                        }.padding(.horizontal, 60)
+
+                    }
+                    
                     LogoView()
 
                     ZStack {
@@ -46,6 +59,7 @@ struct ContentView: View {
                             .frame(width: 200, height: 200)
                         }
                     }
+                    .padding(.top)
                 }
 
                 HStack(spacing: 30) {
@@ -113,7 +127,9 @@ struct ContentView: View {
             }
         }
         .accentColor(Color.white)
-        .ignoresSafeArea(edges: .vertical)
+        .sheet(isPresented: $showingCreditsSheet) {
+            CreditsView()
+        }
     }
     
     func restartTimer(duration: Int) -> Void {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0912F0BB2AF500E800314E46 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912F0BA2AF500E800314E46 /* LogoView.swift */; };
+		0912F0BD2AF5082C00314E46 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912F0BC2AF5082C00314E46 /* CreditsView.swift */; };
 		0947CDCF2AF2BE8200EF225E /* mafia_timerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947CDCE2AF2BE8200EF225E /* mafia_timerApp.swift */; };
 		0947CDD12AF2BE8200EF225E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947CDD02AF2BE8200EF225E /* ContentView.swift */; };
 		0947CDD32AF2BE8300EF225E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0947CDD22AF2BE8300EF225E /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		0912F0B92AF404D200314E46 /* mafia-timer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "mafia-timer-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0912F0BA2AF500E800314E46 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		0912F0BC2AF5082C00314E46 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		0947CDCB2AF2BE8200EF225E /* mafia_timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mafia_timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0947CDCE2AF2BE8200EF225E /* mafia_timerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mafia_timerApp.swift; sourceTree = "<group>"; };
 		0947CDD02AF2BE8200EF225E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				0947CDD42AF2BE8300EF225E /* Preview Content */,
 				0947CDDD2AF2CADF00EF225E /* CircularProgressView.swift */,
 				0912F0BA2AF500E800314E46 /* LogoView.swift */,
+				0912F0BC2AF5082C00314E46 /* CreditsView.swift */,
 			);
 			path = mafia_timer;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				0947CDDE2AF2CADF00EF225E /* CircularProgressView.swift in Sources */,
 				0912F0BB2AF500E800314E46 /* LogoView.swift in Sources */,
 				0947CDD12AF2BE8200EF225E /* ContentView.swift in Sources */,
+				0912F0BD2AF5082C00314E46 /* CreditsView.swift in Sources */,
 				0947CDCF2AF2BE8200EF225E /* mafia_timerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
