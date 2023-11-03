@@ -7,19 +7,18 @@
 
 import AVFoundation
 import SwiftUI
+import Combine
 
 var player : AVAudioPlayer?
 
 struct ContentView: View {
-    @State private var spent: Int = 2
+    @State private var spent: Int = 0
     @State private var running = false
     @State private var mode = 60 // 30
+    @State private var timer: Timer? = nil
 
     let buttonWidth = CGFloat(80)
     let fontSize = CGFloat(32)
-    let timer = Timer
-        .publish(every: 1, on: .main, in: .common)
-        .autoconnect()
 
     var timeRemaining : Int {
         mode - spent
@@ -62,8 +61,7 @@ struct ContentView: View {
                 HStack(spacing: 30) {
                     if spent == 0 {
                         Button {
-                            mode = 60
-                            running = true
+                            restartTimer(duration: 60)
                             playSound(resource: "start")
                         } label: {
                             Text("60")
@@ -74,8 +72,7 @@ struct ContentView: View {
                         .controlSize(.large)
 
                         Button {
-                            mode = 30
-                            running = true
+                            restartTimer(duration: 30)
                             playSound(resource: "start")
                         } label: {
                             Text("30")
@@ -87,7 +84,7 @@ struct ContentView: View {
                     } else {
                         Button {
                             spent = 0
-                            running = false
+                            stopTimer()
                         } label: {
                             Image(systemName: "arrow.counterclockwise")
                                 .font(.system(size: fontSize))
@@ -98,7 +95,8 @@ struct ContentView: View {
 
                         if running {
                             Button {
-                                running = false
+                                stopTimer()
+                                player?.pause()
                             } label: {
                                 Image(systemName: "pause")
                                     .font(.system(size: fontSize))
@@ -108,7 +106,8 @@ struct ContentView: View {
                             .controlSize(.large)
                         } else {
                             Button {
-                                running = true
+                                startTimer()
+                                player?.play()
                             } label: {
                                 Image(systemName: "play.fill")
                                     .font(.system(size: fontSize))
@@ -123,21 +122,40 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        .onReceive(timer) { time in
-            guard running else { return }
-
-            if timeRemaining > 0 {
-                spent += 1
-                if timeRemaining == 10 {
-                    playSound(resource: "ten")
-                }
-            } else {
-                spent = 0
-                running = false
-            }
-        }
         .accentColor(Color.white)
         .ignoresSafeArea(edges: .vertical)
+    }
+    
+    func restartTimer(duration: Int) -> Void {
+        mode = duration
+        spent = 0
+        startTimer()
+    }
+    
+    func stopTimer() -> Void {
+        running = false
+
+        if timer != nil {
+            timer!.invalidate()
+        }
+    }
+    
+    func startTimer() -> Void {
+        running = true
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            spent += 1
+
+            if timeRemaining == 10 {
+                playSound(resource: "ten")
+            } else if timeRemaining == 0 {
+                spent = 0
+                stopTimer()
+            }
+        }
+        
+        if timer != nil {
+            timer!.fire()
+        }
     }
 
     func playSound(resource: String) -> Void {
