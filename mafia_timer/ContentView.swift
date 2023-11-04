@@ -9,22 +9,14 @@ import AVFoundation
 import SwiftUI
 import Combine
 
-var player : AVAudioPlayer?
+var player: AVAudioPlayer?
 
 struct ContentView: View {
-    @State private var spent: Double = 0.0
-    @State private var running: Bool = false
-    @State private var mode: Double = 60.0
-    @State private var timer: Timer? = nil
     @State private var showingCreditsSheet = false
+    @ObservedObject var timerSession = TimerSession()
 
     let buttonWidth = CGFloat(80)
     let fontSize = CGFloat(32)
-
-    var timeRemaining: Double {
-        let multiplier = pow(10, Double(1))
-        return Darwin.round((mode - spent) * multiplier) / multiplier
-    }
 
     var body: some View {
         ZStack {
@@ -41,21 +33,20 @@ struct ContentView: View {
                             Image(systemName: "info.circle")
                                 .font(.system(size: 20))
                         }.padding(.horizontal, 60)
-
                     }
-                    
+
                     LogoView()
 
                     ZStack {
-                        if spent > 0 {
-                            Text("\(Int(timeRemaining))")
+                        if timerSession.duration != nil {
+                            Text("\(Int(timerSession.left))")
                                 .font(.system(size: 72, design: .rounded))
                                 .foregroundColor(.white)
-                            
+
                             CircularProgressView(
-                                total: mode,
-                                spent: spent,
-                                lineWidth: 15
+                                total: timerSession.duration!,
+                                spent: timerSession.spent,
+                                lineWidth: 12
                             )
                             .frame(width: 200, height: 200)
                         }
@@ -64,9 +55,13 @@ struct ContentView: View {
                 }
 
                 HStack(spacing: 30) {
-                    if spent.isZero {
+                    if timerSession.duration == nil {
                         Button {
-                            restartTimer(duration: 60.0)
+                            timerSession.setDuration(duration: 60.0)
+                            timerSession.setCallback {
+                                playSound(resource: "ten")
+                            }
+                            timerSession.start()
                             playSound(resource: "start")
                         } label: {
                             Text("60")
@@ -77,7 +72,11 @@ struct ContentView: View {
                         .controlSize(.large)
 
                         Button {
-                            restartTimer(duration: 30.0)
+                            timerSession.setDuration(duration: 30.0)
+                            timerSession.setCallback {
+                                playSound(resource: "ten")
+                            }
+                            timerSession.start()
                             playSound(resource: "start")
                         } label: {
                             Text("30")
@@ -88,8 +87,7 @@ struct ContentView: View {
                         .controlSize(.large)
                     } else {
                         Button {
-                            spent = 0.0
-                            stopTimer()
+                            timerSession.stop()
                         } label: {
                             Image(systemName: "arrow.counterclockwise")
                                 .font(.system(size: fontSize))
@@ -98,9 +96,9 @@ struct ContentView: View {
                         .buttonStyle(.bordered)
                         .controlSize(.large)
 
-                        if running {
+                        if timerSession.running {
                             Button {
-                                stopTimer()
+                                timerSession.pause()
                                 player?.pause()
                             } label: {
                                 Image(systemName: "pause")
@@ -111,8 +109,12 @@ struct ContentView: View {
                             .controlSize(.large)
                         } else {
                             Button {
-                                startTimer()
-                                player?.play()
+                                timerSession.start()
+
+                                if timerSession.left < 10.0 {
+                                    // only resume "10 sec" sound
+                                    player?.play()
+                                }
                             } label: {
                                 Image(systemName: "play.fill")
                                     .font(.system(size: fontSize))
@@ -130,39 +132,6 @@ struct ContentView: View {
         .accentColor(Color.white)
         .sheet(isPresented: $showingCreditsSheet) {
             CreditsView()
-        }
-    }
-    
-    func restartTimer(duration: Double) -> Void {
-        mode = duration
-        spent = 0.0
-        startTimer()
-    }
-    
-    func stopTimer() -> Void {
-        running = false
-
-        if timer != nil {
-            timer!.invalidate()
-        }
-    }
-    
-    func startTimer() -> Void {
-        running = true
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { runningTimer in
-            spent += runningTimer.timeInterval
-
-            print(timeRemaining)
-            if timeRemaining == 10.0 {
-                playSound(resource: "ten")
-            } else if timeRemaining.isZero {
-                spent = 0.0
-                stopTimer()
-            }
-        }
-        
-        if timer != nil {
-            timer!.fire()
         }
     }
 

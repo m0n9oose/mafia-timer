@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0912F0BB2AF500E800314E46 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912F0BA2AF500E800314E46 /* LogoView.swift */; };
 		0912F0BD2AF5082C00314E46 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912F0BC2AF5082C00314E46 /* CreditsView.swift */; };
+		0912F0BF2AF5763300314E46 /* TimerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0912F0BE2AF5763300314E46 /* TimerSession.swift */; };
 		0947CDCF2AF2BE8200EF225E /* mafia_timerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947CDCE2AF2BE8200EF225E /* mafia_timerApp.swift */; };
 		0947CDD12AF2BE8200EF225E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0947CDD02AF2BE8200EF225E /* ContentView.swift */; };
 		0947CDD32AF2BE8300EF225E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0947CDD22AF2BE8300EF225E /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		0912F0B92AF404D200314E46 /* mafia-timer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "mafia-timer-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0912F0BA2AF500E800314E46 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		0912F0BC2AF5082C00314E46 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		0912F0BE2AF5763300314E46 /* TimerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSession.swift; sourceTree = "<group>"; };
 		0947CDCB2AF2BE8200EF225E /* mafia_timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mafia_timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0947CDCE2AF2BE8200EF225E /* mafia_timerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mafia_timerApp.swift; sourceTree = "<group>"; };
 		0947CDD02AF2BE8200EF225E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				0947CDDD2AF2CADF00EF225E /* CircularProgressView.swift */,
 				0912F0BA2AF500E800314E46 /* LogoView.swift */,
 				0912F0BC2AF5082C00314E46 /* CreditsView.swift */,
+				0912F0BE2AF5763300314E46 /* TimerSession.swift */,
 			);
 			path = mafia_timer;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0912F0BF2AF5763300314E46 /* TimerSession.swift in Sources */,
 				0947CDDE2AF2CADF00EF225E /* CircularProgressView.swift in Sources */,
 				0912F0BB2AF500E800314E46 /* LogoView.swift in Sources */,
 				0947CDD12AF2BE8200EF225E /* ContentView.swift in Sources */,
@@ -293,7 +297,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEVELOPMENT_ASSET_PATHS = "mafia_timer/Preview\\ Content";
 				DEVELOPMENT_TEAM = 42F2XJ8ZA9;
 				ENABLE_PREVIEWS = YES;
@@ -332,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 101;
 				DEVELOPMENT_ASSET_PATHS = "mafia_timer/Preview\\ Content";
 				DEVELOPMENT_TEAM = 42F2XJ8ZA9;
 				ENABLE_PREVIEWS = YES;
