@@ -31,10 +31,14 @@ class TimerSession: ObservableObject {
     }
 
     func setDuration(duration: Double) -> Void {
+        pause()
+        self.spent = 0.0
         self.duration = duration
     }
 
     func setCallback(callback: @escaping () -> ()) -> Void {
+        pause()
+        self.spent = 0.0
         self.callback = callback
     }
 
