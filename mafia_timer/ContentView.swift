@@ -88,6 +88,7 @@ struct ContentView: View {
                     } else {
                         Button {
                             timerSession.stop()
+                            player?.stop()
                         } label: {
                             Image(systemName: "arrow.counterclockwise")
                                 .font(.system(size: fontSize))
