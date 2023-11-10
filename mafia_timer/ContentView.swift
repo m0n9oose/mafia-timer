@@ -139,7 +139,7 @@ struct ContentView: View {
     func playSound(resource: String) -> Void {
         if let url = Bundle.main.url(forResource: resource, withExtension: "mp3") {
             do {
-                try AVAudioSession.sharedInstance().setCategory(.playback)
+                try AVAudioSession.sharedInstance().setCategory(.playback, options: .mixWithOthers)
 
                 player = try AVAudioPlayer(contentsOf: url)
 
